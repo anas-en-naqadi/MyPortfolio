@@ -1070,9 +1070,8 @@ cursor: pointer;
         width: 200px;
         height: 200px;
         border: 3px solid black;
-        position: absolute;
-        top: 80px;
-        right: 80px;
+        position: relative;
+        top:-40rem;
 
 
     }
