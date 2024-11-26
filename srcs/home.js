@@ -32,7 +32,6 @@ if (dark){
 }
 }
 )
-document.querySelector('nav ul li:first-child a').style.color="red";
 
 let test = false;
 document.querySelector('.checkbtn').addEventListener('click',function(){
@@ -104,10 +103,27 @@ document.getElementById("send-btn").addEventListener("click", function (event) {
   const message = document.getElementById("message").value;
 
   // Ensure required fields are filled
-  if (!name || !email || !message) {
-    alert("Please fill in all required fields.");
-    return;
+  if (!name && !email && !message && !phone) {
+   
+
+   alert("Please fill the form !!");
   }
+    else if(!name.includes(" ")){
+      alert("Please enter your FullName");
+    }
+    else if(!email.includes("@") && !email.includes("gmail.com")){
+      alert("Please write the email in the correct format");
+    }
+    else if(message.length <=20){
+      alert("The message required at least 20 characters");
+    }
+    else if(phone.length <=10){
+      alert("The message required must be 10 characters");
+    }
+  else{
+
+  
+  
 
   // Send email using EmailJS
   emailjs
@@ -129,6 +145,34 @@ document.getElementById("send-btn").addEventListener("click", function (event) {
       function (error) {
         alert("Failed to send message. Please try again.");
       }
-    );
+    );}
 });
           
+// Select all the sections and navigation links
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+// Create the IntersectionObserver
+const observer2 = new IntersectionObserver(
+  (entries) => {
+    console.log(sections);
+    entries.forEach((entry) => {
+      // Select the link corresponding to the section
+      const link = document.querySelector(
+        `nav ul li a[href="#${entry.target.id}"]`
+      );
+      console.log("link", link)
+
+      // Add 'active' class if the section is in the viewport, else remove it
+      if (entry.isIntersecting) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  },
+  { threshold: 0.7 } // Trigger when 70% of the section is visible
+);
+
+// Observe each section
+sections.forEach((section) => observer2.observe(section));

@@ -252,6 +252,7 @@ nav {
     align-items: center;
     flex-direction: row;
     height: 750px;
+    
 
 }
 
@@ -306,7 +307,7 @@ nav {
 
 #about {
     height: 750px;
-    margin-top: -20px;
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -475,7 +476,7 @@ cursor: pointer;
 
 #projects {
 
-    height: 750px;
+    height: 690px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -627,8 +628,8 @@ cursor: pointer;
 
 .inp-in textarea {
     border-radius: 4px;
-    outline: none;
     padding: 5px;
+    resize: none;
     outline: none;
     border: 1px solid red;
 }
@@ -648,8 +649,14 @@ cursor: pointer;
     height: 40px;
     color:white;
     border-radius: 6px;
+    border-style: none;
     background-color: red;
     font-family: tahoma;
+    cursor: pointer;
+}
+.inp-in button:hover {
+    background-color: orange;
+
 }
 
 .contact-into>h1 {
@@ -941,7 +948,7 @@ cursor: pointer;
     }
 
     #about {
-        height: 890px;
+        height: 750px;
         margin-top: 50px;
         width: 100%;
 
@@ -991,7 +998,7 @@ cursor: pointer;
     }
 
 }
-@media (max-width:767px) {
+@media (max-width:780px) {
     #nav-list {
         display: none;
         flex-direction: column;
@@ -1327,4 +1334,8 @@ nav {
   
 nav ul {
     padding-right: 10px;
+}
+
+.active {
+    color:red;
 }
