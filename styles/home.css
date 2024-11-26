@@ -655,7 +655,8 @@ cursor: pointer;
     cursor: pointer;
 }
 .inp-in button:hover {
-    background-color: orange;
+    background-color: rgb(0, 157, 255);
+    transition: all ease-out 1s;
 
 }
 
